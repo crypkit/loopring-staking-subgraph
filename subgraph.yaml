@@ -1,0 +1,32 @@
+specVersion: 0.0.2
+description: Loopring Staking Subgraph
+repository: https://github.com/graphprotocol/example-subgraph
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: UserStakingPool
+    network: mainnet
+    source:
+      address: '0xF4662bB1C4831fD411a95b8050B3A5998d8A4A5b'
+      abi: UserStakingPool
+      startBlock: 8967548
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - LRCRewarded
+        - LRCStaked
+        - LRCWithdrawn
+      abis:
+        - name: UserStakingPool
+          file: ./abis/UserStakingPool.json
+      eventHandlers:
+        - event: LRCRewarded(indexed address,uint256)
+          handler: handleLRCRewarded
+        - event: LRCStaked(indexed address,uint256)
+          handler: handleLRCStaked
+        - event: LRCWithdrawn(indexed address,uint256)
+          handler: handleLRCWithdrawn
+      file: ./src/mapping.ts

@@ -1,0 +1,6 @@
+type LRCEvent @entity {
+  id: ID!
+  amount: BigInt!
+  user: String!
+  eventType: String!
+}
