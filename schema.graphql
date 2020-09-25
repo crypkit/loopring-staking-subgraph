@@ -4,7 +4,7 @@ enum EventType {
   WITHDRAWAL
 }
 
-type LRCEvent @entity {
+type LrcEvent @entity {
   id: ID! # hash of transaction in which the event was emitted
   amount: BigInt!
   user: Bytes!
