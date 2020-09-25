@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 description: Loopring Staking Subgraph
-repository: https://github.com/graphprotocol/example-subgraph
+repository: https://github.com/crypkit/loopring-staking-subgraph
 schema:
   file: ./schema.graphql
 dataSources:

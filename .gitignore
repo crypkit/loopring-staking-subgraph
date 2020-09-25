@@ -62,4 +62,5 @@ typings/
 
 .idea
 
-generated
+/generated/
+/build/
