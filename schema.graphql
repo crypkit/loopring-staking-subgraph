@@ -1,6 +1,14 @@
+enum EventType {
+  REWARD
+  STAKE
+  WITHDRAWAL
+}
+
 type LRCEvent @entity {
-  id: ID!
+  id: ID! # transaction hash
   amount: BigInt!
   user: String!
-  eventType: String!
+  eventType: EventType!
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
 }
