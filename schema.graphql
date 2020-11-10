@@ -5,7 +5,8 @@ enum EventType {
 }
 
 type LrcEvent @entity {
-  id: ID! # hash of transaction in which the event was emitted
+  id: ID! # {tx_hash}-{logInfo}
+  txHash: Bytes!
   amount: BigInt!
   user: Bytes!
   eventType: EventType!
